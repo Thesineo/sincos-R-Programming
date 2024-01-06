@@ -1,5 +1,5 @@
 # sincos
-Predecitve model Stock Return forecast for top technical firms in UK 
+Predecitve model for Stock Return forecastor predection for top technical firms in UK listed on London Stock Exchange 
 #ARIMA Model 
 install.packages("quantmod")
 library(quantmod) 
