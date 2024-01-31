@@ -1,6 +1,6 @@
 # sincos
-Predecitve model for Stock Return forecast (future prediction) for top technical firms in UK listed on London Stock Exchange 
-#ARIMA Model 
+# Predecitve model for Stock Return forecast (future prediction) for top technical firms in UK listed on London Stock Exchange 
+# ARIMA Model 
 install.packages("quantmod")
 library(quantmod) 
 # Input the Stock Variables for required firms predective analysis (SGE.L,SN.L,BA.L,CCC.L,GNS.L,QQ.L,FLTR.L,RWS.L,SPT.L,SXS.L) ( This is the Dataset, that will change accordingly when you input different Stock symbols or ticker symbols  of Respective companies and you can also change the time set )
