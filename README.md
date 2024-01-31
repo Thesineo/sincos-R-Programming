@@ -1,9 +1,9 @@
 # sincos
-Predecitve model for Stock Return forecastor predection for top technical firms in UK listed on London Stock Exchange 
+Predecitve model for Stock Return forecast (future prediction) for top technical firms in UK listed on London Stock Exchange 
 #ARIMA Model 
 install.packages("quantmod")
 library(quantmod) 
-# Input the Stock Variables for required firms predective analysis (SGE.L,SN.L,BA.L,CCC.L,GNS.L,QQ.L,FLTR.L,RWS.L,SPT.L,SXS.L)
+# Input the Stock Variables for required firms predective analysis (SGE.L,SN.L,BA.L,CCC.L,GNS.L,QQ.L,FLTR.L,RWS.L,SPT.L,SXS.L) ( This is the Dataset, that will change accordingly when you input different Stock symbols or ticker symbols  of Respective companies and you can also change the time set )
 data<-getSymbols("SN.L", src = "yahoo",from=as.Date("2015-01-01"),to=as.Date("2022-12-31"),auto.assign = FALSE)
 #Daily Data 
 data
@@ -77,6 +77,7 @@ fite
 tsdisplay(residuals(fite),lag.max = 40)
 checkresiduals(fite)
 #Forecasting the future values for stock returns 
+# "forecasta, forecastb, forecastc, forecastd,forecaste" is the predicted values of future stock prices of respective companies 
 forecasta<-forecast(fitA,h=503)
 plot(forecasta)
 forecasta
@@ -108,7 +109,7 @@ library(PerformanceAnalytics)
 library(rugarch)
 library(tseries)
 
-# # Input the Stock Variables for required firms predective analysis (SGE.L,SN.L,BA.L,CCC.L,GNS.L,QQ.L,FLTR.L,RNS.L,SPT.L,SXS.L)
+# # Input the Stock Variables for required firms predective analysis (SGE.L,SN.L,BA.L,CCC.L,GNS.L,QQ.L,FLTR.L,RNS.L,SPT.L,SXS.L) ( This is the Dataset, that will change accordingly when you input different Stock symbols or ticker symbols  of Respective companies and you can also change the time set )
 datag<-getSymbols("SN.L" ,src = "yahoo",from=as.Date("2015-01-01"),to=as.Date("2022-12-31"),auto.assign = FALSE)
 #For Daily Data 
 View(datag)
@@ -231,6 +232,7 @@ tail(CLOSEPRICET)
 # predicted values of stock return (Closing Price) of the firms on each day
 #Substitute the last value of Stock close price from the trainiing set in the p variable to predict the future values from the GARCH model
 p <- 1510*apply(fitted(predictedvalues),1, 'cumsum') +1510
+# p is the predicted values of future stock prices of respective companies 
 p
 View(p)
 plot(p)
